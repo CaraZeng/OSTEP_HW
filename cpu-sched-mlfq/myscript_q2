@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Chapter 8 - Question 2
+# Reproduce the MLFQ examples from Chapter 8.
+# Each case is selected and executed through a Bash loop.
+
+for example in 1 2 3 4 5 6
+do
+    echo
+    echo "========================================"
+    echo "Chapter 8 Example $example"
+    echo "========================================"
+
+    case $example in
+
+        1)
+            echo "Figure 8.2 - Single long-running job"
+            python3 mlfq.py -n 3 -q 10 -l 0,200,0 -c
+            ;;
+
+        2)
+            echo "Figure 8.3 (left) - Short job arrives later"
+            python3 mlfq.py -n 3 -q 10 \
+                -l 0,180,0:100,20,0 -c
+            ;;
+
+        3)
+            echo "Figure 8.3 (right) - Interactive job with I/O"
+            python3 mlfq.py -n 3 -q 10 \
+                -l 0,180,0:100,20,1 -c
+            ;;
+
+        4)
+            echo "Figure 8.4 - Priority boost"
+            python3 mlfq.py -n 3 -q 10 -B 100 \
+                -l 0,200,0:50,100,5:50,100,5 -c
+            ;;
+
+        5)
+            echo "Figure 8.5 - Gaming tolerance"
+            python3 mlfq.py -n 3 -q 10 -S \
+                -l 0,200,0:0,200,9 -c
+            ;;
+
+        6)
+            echo "Figure 8.6 - Different quantum lengths"
+            python3 mlfq.py -Q 10,20,40 \
+                -l 0,200,0:0,200,0 -c
+            ;;
+    esac
+done

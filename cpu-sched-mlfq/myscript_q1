@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Chapter 8 - Question 1
+# Run three randomly generated MLFQ simulations.
+
+for seed in 1 2 3
+do
+    echo "========================================"
+    echo "Random Seed: $seed"
+    echo "========================================"
+
+    python3 mlfq.py -s "$seed" -j 2 -n 2 -m 10 -M 0 -c
+
+    echo
+done
