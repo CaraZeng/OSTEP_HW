@@ -1,0 +1,110 @@
+===== Q1: Fork/Join =====
+parent: begin
+child
+parent: end
+===== Q2: Rendezvous =====
+parent: begin
+child 1: before
+child 2: before
+child 2: after
+child 1: after
+parent: end
+===== Q3: Barrier (2 threads) =====
+parent: begin
+child 0: before
+child 1: before
+child 1: after
+child 0: after
+parent: end
+===== Q3: Barrier (5 threads) =====
+parent: begin
+child 0: before
+child 1: before
+child 2: before
+child 3: before
+child 4: before
+child 4: after
+child 0: after
+child 1: after
+child 2: after
+child 3: after
+parent: end
+===== Q3: Barrier (10 threads) =====
+parent: begin
+child 0: before
+child 1: before
+child 2: before
+child 3: before
+child 4: before
+child 5: before
+child 6: before
+child 7: before
+child 8: before
+child 9: before
+child 9: after
+child 0: after
+child 1: after
+child 2: after
+child 3: after
+child 4: after
+child 5: after
+child 7: after
+child 6: after
+child 8: after
+parent: end
+===== Q4: Reader-Writer =====
+begin
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+write 1
+write 2
+write 3
+write 4
+write 5
+read 5
+read 5
+read 5
+read 5
+read 5
+write 6
+write 7
+write 8
+write 9
+write 10
+end: value 10
+===== Q5: Reader-Writer No-Starve =====
+begin
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+read 0
+write 1
+write 2
+write 3
+write 4
+write 5
+write 6
+write 7
+write 8
+write 9
+write 10
+end: value 10

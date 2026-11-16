@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #include "common_threads.h"
+#include "zemaphore.h"
 
 // If done correctly, each child should print their "before" message
 // before either prints their "after" message. Test by adding sleep(1)
@@ -13,7 +14,10 @@
 // other integers to track things.
 
 typedef struct __barrier_t {
-    // add semaphores and other information here
+    int count;
+    int total;
+    Zem_t mutex;
+    Zem_t turnstile;
 } barrier_t;
 
 
@@ -21,11 +25,24 @@ typedef struct __barrier_t {
 barrier_t b;
 
 void barrier_init(barrier_t *b, int num_threads) {
-    // initialization code goes here
+    b->count = 0;
+    b->total = num_threads;
+    Zem_init(&b->mutex, 1);
+    Zem_init(&b->turnstile, 0);
 }
 
 void barrier(barrier_t *b) {
-    // barrier code goes here
+    Zem_wait(&b->mutex);
+    b->count++;
+
+    if (b->count == b->total) {
+        Zem_post(&b->turnstile);
+    }
+
+    Zem_post(&b->mutex);
+
+    Zem_wait(&b->turnstile);
+    Zem_post(&b->turnstile);
 }
 
 //

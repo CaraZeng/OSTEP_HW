@@ -1,0 +1,72 @@
+vector-global-order          parallel=False threads= 2 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 2 loops=100000 time=0.02     retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 4 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 4 loops=100000 time=0.03333333333333333 retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 8 loops= 10000 time=0.01     retries=None     status=OK,OK,OK
+vector-global-order          parallel=False threads= 8 loops=100000 time=0.11     retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 2 loops=  1000 time=0.0033333333333333335 retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 2 loops=100000 time=0.01     retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 4 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 4 loops=100000 time=0.016666666666666666 retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 8 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-global-order          parallel=True  threads= 8 loops=100000 time=0.030000000000000002 retries=None     status=OK,OK,OK
+vector-try-wait              parallel=False threads= 2 loops=  1000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=False threads= 2 loops= 10000 time=0.0      retries=1209.6666666666667 status=OK,OK,OK
+vector-try-wait              parallel=False threads= 2 loops=100000 time=0.013333333333333334 retries=3518.6666666666665 status=OK,OK,OK
+vector-try-wait              parallel=False threads= 4 loops=  1000 time=0.0      retries=285.6666666666667 status=OK,OK,OK
+vector-try-wait              parallel=False threads= 4 loops= 10000 time=0.01     retries=3963     status=OK,OK,OK
+vector-try-wait              parallel=False threads= 4 loops=100000 time=0.11     retries=25835.666666666668 status=OK,OK,OK
+vector-try-wait              parallel=False threads= 8 loops=  1000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=False threads= 8 loops= 10000 time=0.023333333333333334 retries=5192.333333333333 status=OK,OK,OK
+vector-try-wait              parallel=False threads= 8 loops=100000 time=0.2633333333333333 retries=34982.666666666664 status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 2 loops=  1000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 2 loops= 10000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 2 loops=100000 time=0.01     retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 4 loops=  1000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 4 loops= 10000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 4 loops=100000 time=0.01     retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 8 loops=  1000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 8 loops= 10000 time=0.0      retries=0        status=OK,OK,OK
+vector-try-wait              parallel=True  threads= 8 loops=100000 time=0.02     retries=0        status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 2 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 2 loops=100000 time=0.02     retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 4 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 4 loops=100000 time=0.060000000000000005 retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 8 loops= 10000 time=0.01     retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=False threads= 8 loops=100000 time=0.35333333333333333 retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 2 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 2 loops=100000 time=0.01     retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 4 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 4 loops=100000 time=0.04     retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 8 loops= 10000 time=0.01     retries=None     status=OK,OK,OK
+vector-avoid-hold-and-wait   parallel=True  threads= 8 loops=100000 time=0.1      retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 2 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 2 loops=100000 time=0.02     retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 4 loops= 10000 time=0.01     retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 4 loops=100000 time=0.07333333333333333 retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 8 loops= 10000 time=0.04     retries=None     status=OK,OK,OK
+vector-nolock                parallel=False threads= 8 loops=100000 time=0.4033333333333333 retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 2 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 2 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 2 loops=100000 time=0.01     retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 4 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 4 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 4 loops=100000 time=0.01     retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 8 loops=  1000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 8 loops= 10000 time=0.0      retries=None     status=OK,OK,OK
+vector-nolock                parallel=True  threads= 8 loops=100000 time=0.02     retries=None     status=OK,OK,OK

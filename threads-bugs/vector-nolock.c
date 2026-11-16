@@ -10,12 +10,8 @@
 #include "vector-header.h"
 
 // taken from https://en.wikipedia.org/wiki/Fetch-and-add
-int fetch_and_add(int * variable, int value) {
-    asm volatile("lock; xaddl %%eax, %2;"
-		 :"=a" (value)                  
-		 :"a" (value), "m" (*variable)  
-		 :"memory");
-    return value;
+int fetch_and_add(int *variable, int value) {
+    return __atomic_fetch_add(variable, value, __ATOMIC_SEQ_CST);
 }
 
 void vector_add(vector_t *v_dst, vector_t *v_src) {

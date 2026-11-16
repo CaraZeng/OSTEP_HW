@@ -2,28 +2,54 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "common_threads.h"
+#include "zemaphore.h"
 
 //
 // Your code goes in the structure and functions below
 //
 
 typedef struct __rwlock_t {
+    int readers;
+    Zem_t mutex;
+    Zem_t write_lock;
+    Zem_t turnstile;
 } rwlock_t;
 
 
 void rwlock_init(rwlock_t *rw) {
+    rw->readers = 0;
+    Zem_init(&rw->mutex, 1);
+    Zem_init(&rw->write_lock, 1);
+    Zem_init(&rw->turnstile, 1);
 }
 
 void rwlock_acquire_readlock(rwlock_t *rw) {
+    Zem_wait(&rw->turnstile);
+    Zem_post(&rw->turnstile);
+
+    Zem_wait(&rw->mutex);
+    rw->readers++;
+    if (rw->readers == 1)
+        Zem_wait(&rw->write_lock);
+    Zem_post(&rw->mutex);
 }
 
 void rwlock_release_readlock(rwlock_t *rw) {
+    Zem_wait(&rw->mutex);
+    rw->readers--;
+    if (rw->readers == 0)
+        Zem_post(&rw->write_lock);
+    Zem_post(&rw->mutex);
 }
 
 void rwlock_acquire_writelock(rwlock_t *rw) {
+    Zem_wait(&rw->turnstile);
+    Zem_wait(&rw->write_lock);
 }
 
 void rwlock_release_writelock(rwlock_t *rw) {
+    Zem_post(&rw->write_lock);
+    Zem_post(&rw->turnstile);
 }
 
 //
